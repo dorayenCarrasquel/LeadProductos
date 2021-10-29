@@ -35,7 +35,15 @@ public class LeadService {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
-    public LeadDto buscarProducto()
+    public LeadDto buscarProducto(LeadDto leadDto){
+        for (LeadDto leadReferencia: leadDtoList) {
+            if (leadDto.getProdutos().equals(leadDto.getProdutos())) {
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
+            }
+            //metodo atualizar produtos
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
 
 
     public LeadDto verificarEmail(@PathVariable String email, @RequestBody LeadDto leadDto){

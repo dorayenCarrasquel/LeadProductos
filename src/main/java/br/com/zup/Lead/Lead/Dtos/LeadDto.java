@@ -6,17 +6,10 @@ public class LeadDto {
     private String email;
     private String nome;
     private String telefone;
-    List<ProductDto> productDto;
+    private List<ProductDto> produtos;
 
 
     public LeadDto() {
-    }
-
-    public LeadDto(String email, String nome, String telefone, List<ProductDto> productDto) {
-        this.email = email;
-        this.nome = nome;
-        this.telefone = telefone;
-        this.productDto = productDto;
     }
 
     public String getEmail() {
@@ -43,11 +36,11 @@ public class LeadDto {
         this.telefone = telefone;
     }
 
-    public List<ProductDto> getProductDto() {
-        return productDto;
+    public List<ProductDto> getProdutos() {
+        return produtos;
     }
 
-    public void setProductDto(List<ProductDto> productDto) {
-        this.productDto = productDto;
+    public void setProdutos(List<ProductDto> produtos) {
+        this.produtos = produtos;
     }
 }
