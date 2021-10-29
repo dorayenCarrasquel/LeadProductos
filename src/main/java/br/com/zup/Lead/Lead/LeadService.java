@@ -26,29 +26,32 @@ public class LeadService {
     }
 
 
-    public LeadDto buscarEmail(String email, LeadDto leadDto){
+    public LeadDto buscarEmail(LeadDto leadDto){
         for (LeadDto leadReferencia: leadDtoList) {
-            if (leadDto.getEmail().equalsIgnoreCase(email)){
-               return leadDto;
+            if (leadReferencia.getEmail().equalsIgnoreCase(leadDto.getEmail())){
+               buscarProducto(leadDto);
             }
         }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        salvarLead(leadDto);
+        throw new ResponseStatusException(HttpStatus.CREATED);
     }
 
     public LeadDto buscarProducto(LeadDto leadDto){
         for (LeadDto leadReferencia: leadDtoList) {
-            if (leadDto.getProdutos().equals(leadDto.getProdutos())) {
+            if (leadReferencia.getProdutos().equals(leadDto.getProdutos())) {
                 throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
             }
             //metodo atualizar produtos
+            leadReferencia.setProdutos(leadDto.getProdutos());
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
 
-    public LeadDto verificarEmail(@PathVariable String email, @RequestBody LeadDto leadDto){
+
+    /*public LeadDto verificarEmail(@PathVariable String email, @RequestBody LeadDto leadDto){
         return
 
-    }
+    }*/
 
 }

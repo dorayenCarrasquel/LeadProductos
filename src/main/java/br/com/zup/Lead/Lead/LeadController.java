@@ -14,10 +14,11 @@ public class LeadController {
     @Autowired
     private LeadService leadService;
 
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void salvarLead(@RequestBody LeadDto leadDto) {
-        leadService.salvarLead(leadDto);
+        leadService.buscarEmail(leadDto);
     }
 
     @GetMapping
